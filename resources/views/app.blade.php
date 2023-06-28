@@ -12,6 +12,7 @@
         rel="stylesheet" />
     <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" />
+    <script src="{{ asset('assets/js/axios.min.js') }}"></script>
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -21,16 +22,19 @@
 
         <!-- Header-->
         @include('components.navbar')
+        @include('components.loader')
 
+        <div class="" id="content-div">
+            @yield('content')
+        </div>
 
-        @yield('content')
 
 
     </main>
     <!-- Footer-->
     @include('components.footer')
 
-    <script src="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
 </body>
 
 </html>
