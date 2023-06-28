@@ -3,10 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProjectController extends Controller
 {
-    public function page() {
+    public function page()
+    {
         return view('pages.projects');
     }
+
+    function projectsData(Request $request)
+    {
+        return DB::table('project')->get();
+    }
+
+
 }
