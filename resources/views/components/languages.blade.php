@@ -33,6 +33,10 @@
             let URL = "/languageData";
             let response = await axios.get(URL);
 
+            // hide loader
+            document.getElementById("loading-div").classList.add("d-none");
+            document.getElementById("content-div").classList.remove("d-none");
+
             response.data.forEach((item) => {
                 document.getElementById('language-list').innerHTML += (`
                         <div class="col mb-4 mb-md-4">

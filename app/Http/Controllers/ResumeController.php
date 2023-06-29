@@ -11,10 +11,18 @@ class ResumeController extends Controller
     {
         return view('pages.resume');
     }
-
-    public function languageData(Request $request)
+    public function resumeLink(Request $request)
     {
-        return DB::table('language')->get();
+        return DB::table('resume')->first();
+    }
+    public function experiencesData()
+    {
+        return DB::table('experiance')->get();
+    }
+
+    public function educationData()
+    {
+        return DB::table('education')->get();
     }
 
     public function skillsData(Request $request)
@@ -22,14 +30,9 @@ class ResumeController extends Controller
         return DB::table('skill')->get();
     }
 
-    public function educationData()
+    public function languageData(Request $request)
     {
-        return DB::table('education')->get();
+        return DB::table('language')->get();
     }
-    public function experiencesData()
-    {
-        return DB::table('experiance')->get();
-    }
-
 
 }

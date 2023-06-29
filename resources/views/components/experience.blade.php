@@ -8,7 +8,7 @@
             <section>
                 <div class="d-flex align-items-center justify-content-between mb-4">
                     <h2 class="text-primary fw-bolder mb-0">Experience</h2>
-                    <a class="btn btn-primary px-4 py-3" href="#!">
+                    <a class="btn btn-primary px-4 py-3" target="_blank" id="CVDownloadLink" href="">
                         <div class="d-inline-block bi bi-download me-2"></div>
                         Download Resume
                     </a>
@@ -29,6 +29,27 @@
 
 
 <script>
+    getResumeLink();
+
+    async function getResumeLink() {
+        try {
+            let URL = '/resumeLink';
+
+            // show loader
+            document.getElementById("loading-div").classList.remove("d-none");
+            document.getElementById("content-div").classList.add("d-none");
+
+            let response = await axios.get(URL);
+
+            let link = response.data['downloadLink'];
+            document.getElementById('CVDownloadLink').setAttribute('href', link);
+
+        } catch (e) {
+            alert(e);
+        }
+    }
+
+
 
     getExpList();
 
@@ -38,9 +59,9 @@
             let URL = '/experiencesData';
             let response = await axios.get(URL);
 
-            response.data.forEach(function (item) {
+            response.data.forEach(function(item) {
                 document.getElementById('experience-Lists').innerHTML +=
-                (`
+                    (`
                     <div class="row align-items-center gx-5 mb-4">
                         <div class="col text-center text-lg-start mb-4 mb-lg-0">
                             <div class="bg-light p-4 rounded-4">
