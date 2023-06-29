@@ -7,15 +7,29 @@ use Illuminate\Support\Facades\DB;
 
 class ResumeController extends Controller
 {
-    public function page() {
+    public function page()
+    {
         return view('pages.resume');
     }
 
-    public function languageData(Request $request)  {
+    public function languageData(Request $request)
+    {
         return DB::table('language')->get();
     }
 
-    public function skillsData(Request $request)  {
+    public function skillsData(Request $request)
+    {
         return DB::table('skill')->get();
     }
+
+    public function educationData()
+    {
+        return DB::table('education')->get();
+    }
+    public function experiencesData()
+    {
+        return DB::table('experiance')->get();
+    }
+
+
 }
