@@ -15,7 +15,7 @@
                 </div>
 
                 <div class="card shadow border-0 rounded-4 mb-5">
-                    <div id="experience-Lists" class="card-body px-5 pt-5">
+                    <div id="experience-Lists" class="card-body px-5 pt-5 mb-4">
 
                         <!-- Experience Lists -->
 
